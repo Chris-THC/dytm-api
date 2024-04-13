@@ -1,6 +1,12 @@
-FROM node:20
+FROM node:19
 # Create app directory
-WORKDIR /usr/src/app
+
+# Define la variable de entorno para la ruta base de la aplicación
+ENV APP_DIR /usr/src/app
+
+# Establece el directorio de trabajo
+WORKDIR $APP_DIR
+
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY package*.json ./
@@ -13,6 +19,7 @@ RUN npm install
 # RUN npm ci --only=production
 # Bundle app source
 # Copy app source to /usr/src/app
+# COPY ./src/downloader/work.js ./
 COPY . .
 # Run the app
 EXPOSE 5000
