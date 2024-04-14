@@ -3,7 +3,7 @@ import cors from "cors";
 import endpoints from "./routes.js";
 
 const app = express();
-const port = 5000;
+const port = 5022;
 
 app.use(cors());
 app.use(express.json());
@@ -18,7 +18,4 @@ app.use((req, res) => {
   });
 });
 
-app.listen(port, "0.0.0.0", () =>
-  // console.log(`Server is running on http://localhost:${port}/`)
-  console.log(`Server is running:${port}/`)
-);
+app.listen(port, "0.0.0.0", () => console.log(`Server is running:${port}/`));

@@ -36,7 +36,13 @@ export const downloadTrack = async (req, res) => {
       },
     };
 
-    console.log(tags);
+    console.log(`
+    title: ${titleTrack},
+    artist: ${artistTrack},
+    album: ${albumTrack},
+    year: ${yearTrack},
+    trackNumber: ${trackNumber},
+    `);
 
     const stream = ytdl(req.params.videoId, {
       quality: "highestaudio",
